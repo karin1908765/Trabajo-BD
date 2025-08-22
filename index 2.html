@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis Comparativo entre Bases de Datos Relacionales y No Relacionales</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; color: #333; background-color: #f9f9f9; }
+        header { text-align: center; margin-bottom: 40px; }
+        h1 { color: #2c3e50; font-size: 2.5em; margin-bottom: 10px; }
+        h2 { color: #34495e; font-size: 2em; margin-top: 30px; border-bottom: 2px solid #ccc; padding-bottom: 5px; }
+        h3 { color: #34495e; font-size: 1.5em; margin-top: 20px; }
+        p { margin-bottom: 10px; }
+        ul, ol { margin-left: 25px; margin-bottom: 10px; }
+        li { margin-bottom: 5px; }
+        .authors, .affiliation { font-style: italic; color: #555; }
+        .source-cite { font-size: 0.85em; color: #7f8c8d; }
+        b { font-weight: bold; color: #2c3e50; }
+        section { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; color: #7f8c8d; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Análisis Comparativo entre Bases de Datos Relacionales con Bases de Datos No Relacionales</h1>
+        <p class="authors">Autores: Rosa Fernanda Córdova Espinoza, Bernardo Esteban Cuzco Sarango</p>
+        <p class="affiliation">Director: Ing. Germán Parra González</p>
+        <p class="affiliation">Universidad Politécnica Salesiana, Sede Cuenca, Carrera de Ingeniería de Sistemas</p>
+        <p class="affiliation">Cuenca – Ecuador, 2013</p>
+    </header>
+
+    <section id="introduccion">
+        <h2>1. Introducción</h2>
+        <p>Las bases de datos son la columna vertebral de los sistemas modernos, ya que permiten almacenar, organizar y recuperar información de manera estructurada [1]. Históricamente, las bases de datos relacionales se han proyectado como una de las herramientas más difundidas en nuestra sociedad de la información, permitiendo almacenar, manipular y recuperar datos de diversos campos [2]. No obstante, con la evolución de Internet y el surgimiento de servicios como las redes sociales (Web 2.0), aparecieron **problemas de escalabilidad y rendimiento** para las bases de datos relacionales en el manejo de información no transaccional [3]. Esto propició la aparición de las bases de datos no relacionales, o NoSQL, que ofrecen soluciones a estos desafíos [3]. Esta monografía presenta un análisis comparativo entre ambos modelos de bases de datos, explorando sus definiciones, tipos, ventajas y desventajas, con un enfoque en su aplicación en entornos web no transaccionales.</p>
+    </section>
+
+    <section id="bases-relacionales">
+        <h2>2. Bases de Datos Relacionales (SQL)</h2>
+        <h3>2.1. Definición</h3>
+        <p>Una **Base de Datos Relacional** es un repositorio compartido de datos que permite establecer interconexiones (relaciones) entre los datos, los cuales están guardados en tablas [4]. De estas conexiones proviene su nombre, Modelo Relacional, siendo el tipo de base de datos más utilizada en la actualidad para implementar aplicaciones [4]. El modelo relacional fue propuesto por Edgar Frank Codd en 1970 [5-7], y el lenguaje principal para interactuar con estos sistemas es **SQL (Structured Query Language)**, un lenguaje específico de dominio diseñado para administrar y recuperar información [8].</p>
+
+        <h3>2.2. Características Generales de SQL</h3>
+        <p>SQL es un lenguaje de acceso a bases de datos de "alto nivel" o "no de procedimiento" que especifica qué se quiere conseguir, y no cómo, lo que permite una alta productividad en codificación [9, 10]. Sus características incluyen [11]:</p>
+        <ul>
+            <li>**Lenguaje de definición de datos (DDL)**: Proporciona comandos para la definición y modificación de esquemas de relación, así como el borrado de relaciones [11]. Las operaciones básicas DDL son **CREATE** (crear objetos), **ALTER** (modificar la estructura), **DROP** (eliminar objetos) y **TRUNCATE** (borrar contenido de una tabla) [12, 13].</li>
+            <li>**Lenguaje de manipulación de datos (DML)**: Incluye lenguajes de consultas basados en álgebra y cálculo relacional de tuplas [11]. Las operaciones básicas DML son **SELECT** (consultar datos), **INSERT** (agregar registros), **UPDATE** (modificar datos) y **DELETE** (borrar registros) [14].</li>
+            <li>**Integridad**: Permite especificar las restricciones de integridad que deben cumplir los datos [11].</li>
+            <li>**Definición de vistas**: Incluye comandos para definir vistas [11].</li>
+            <li>**Control de transacciones**: Tiene comandos para especificar el comienzo y el final de una transacción [11].</li>
+            <li>**SQL incorporado y dinámico**: Las instrucciones SQL pueden incorporarse en lenguajes de programación como C++, C, Java, PHP, COBOL, Pascal y Fortran [11].</li>
+            <li>**Autorización**: Incluye comandos para especificar los derechos de acceso [11].</li>
+        </ul>
+
+        <h3>2.3. Tipos de Sistemas de Gestión de Bases de Datos Relacionales</h3>
+        <p>Los sistemas de gestión de bases de datos se dividen en dos categorías principales [15]:</p>
+        <ul>
+            <li>**Sistemas Propietarios**: Incluyen bases de datos como **Oracle**, Microsoft SQL Server, y DB2 [15].
+                <ul>
+                    <li>**Oracle**: Es el RDBMS más utilizado y adquirido para diferentes sistemas operativos [16]. Se destaca por su soporte completo de transacciones, estabilidad, escalabilidad y soporte multiplataforma [17-19]. Sin embargo, su principal desventaja es el **alto costo de sus licencias** y la dificultad para encontrar material técnico libremente [20].</li>
+                </ul>
+            </li>
+            <li>**Sistemas de Código Abierto**: Incluyen bases de datos como **MySQL**, PostgreSQL, Firebird, y SQLite [15].
+                <ul>
+                    <li>**MySQL**: Es una de las bases de datos más usadas en el mundo, conocida por su rapidez y facilidad de personalización y configuración. Su arquitectura se caracteriza por separar la capa de SQL de los motores de almacenamiento [21, 22]. Es compatible con la mayoría de plataformas y ofrece una gran comunidad de soporte [23]. Una desventaja es la **falta de procedimientos almacenados** en su parte técnica [24].</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>2.4. Ventajas de las Bases de Datos Relacionales</h3>
+        <ul>
+            <li>**Integridad y coherencia de los datos**: Son excelentes en sistemas que requieren una estructura bien definida y garantizan la consistencia y seguridad de la información. Son ideales para aplicaciones como entidades financieras, ecommerce y sistemas de reservas [25, 26].</li>
+            <li>**Control de procesos**: Permiten controlar la mayoría de los procesos a través de módulos [25].</li>
+            <li>**Disponibilidad de información inmediata y precisa**: Ofrecen acceso a información actualizada en el momento justo [25, 27].</li>
+            <li>**Reducción de redundancia**: Ayudan a reducir la información repetida durante el ingreso de datos [27].</li>
+        </ul>
+
+        <h3>2.5. Desventajas de las Bases de Datos Relacionales</h3>
+        <ul>
+            <li>**Escalabilidad limitada**: Pueden presentar **problemas de escalabilidad y rendimiento** en el manejo de grandes volúmenes de información no transaccional, un desafío que surge con el crecimiento de la web en tiempo real [3].</li>
+            <li>**Complejidad en las relaciones**: La manera de relacionar las diferentes entidades puede ser compleja de entender [28].</li>
+            <li>**Cuellos de botella**: Tienden a generar cuellos de botella al transcribir y ejecutar sentencias complejas, impactando negativamente el rendimiento en cargas de trabajo intensivas [29].</li>
+            <li>**Costo de licencias y recursos**: Las bases de datos comerciales requieren la adquisición de licencias, que pueden ser costosas, y a menudo exigen una enorme cantidad de recursos (memoria RAM, servidores de alto rendimiento) para su instalación [20, 30, 31].</li>
+        </ul>
+    </section>
+
+    <section id="bases-nosql">
+        <h2>3. Bases de Datos No Relacionales (NoSQL)</h2>
+        <h3>3.1. Definición de NoSQL</h3>
+        <p>**NoSQL** (a veces interpretado como "no solo SQL") es una amplia clase de sistemas de gestión de bases de datos que difieren del modelo clásico de SGBDR [32-34]. Sus características principales son que los datos almacenados **no requieren estructuras fijas como tablas**, normalmente no soportan operaciones JOIN, ni garantizan completamente ACID (atomicidad, coherencia, aislamiento y durabilidad) [32, 33].</p>
+        <p>La principal característica de las bases de datos no relacionales es que permiten **manipular grandes cantidades de información de manera muy rápida** (su almacenamiento se realiza en memoria) y tienen la capacidad para **escalar horizontalmente sin perder rendimiento**, funcionando de manera óptima con hardware de bajo coste [35].</p>
+        <p>El término fue originalmente usado por Carlo Strozzi en 1998 para su base de datos relacional de código abierto que no ofrecía una interfaz SQL [36]. Posteriormente, Eric Evans de Rackspace reintrodujo el término para un evento que buscaba discutir bases de datos distribuidas de código abierto que no garantizaban ACID [36].</p>
+
+        <h3>3.2. ¿Por qué surgen las bases de datos NoSQL?</h3>
+        <p>La mayoría de las aplicaciones eran soportadas por bases de datos relacionales, pero con la evolución de Internet y el auge de la web 2.0 (redes sociales, blogs, etc.), surgieron desafíos significativos de escalabilidad y rendimiento en el manejo de grandes volúmenes de información no transaccional [3]. Grandes compañías de Internet, como Google, Amazon, Twitter y Facebook, fueron pioneras en el uso de NoSQL, dándose cuenta de que el **rendimiento y sus propiedades de tiempo real eran más importantes que la coherencia** estricta de las bases de datos relacionales tradicionales [37, 38].</p>
+
+        <h3>3.3. Tipos de Bases de Datos NoSQL</h3>
+        <p>Las bases de datos NoSQL se clasifican según su forma de almacenar los datos, abarcando categorías como clave-valor, implementaciones de BigTable, bases de datos documentales y bases de datos orientadas a grafos [35, 38]:</p>
+        <ul>
+            <li>**Almacenes Key-Value (Clave-Valor)**: Cada elemento se identifica por una llave para recuperar la información de forma rápida. El valor suele ser almacenado como un objeto BLOB [39]. Son fáciles de escalar y se usan principalmente en sistemas de almacenamiento en caché [40, 41]. Ejemplos: Cassandra, Membase, Redis, Riak, BigTable de Google, SimpleDB de Amazon, Voldemort [42, 43].</li>
+            <li>**Orientadas a Columnas**: Guardan sus valores en columnas en lugar de filas. Son más rápidas para lecturas que involucran pocas columnas, pero menos eficientes para escrituras [44]. Ejemplos: Vertica, Microsoft, Qd Technology, Sybase, ParAccel, Infobright [42].</li>
+            <li>**Basadas en Documentos**: Almacenan la información como documentos con una estructura simple (JSON o XML) y una llave única. Permiten consultas avanzadas y establecer relaciones entre ellos, aunque no permiten JOINS directos [45-47]. Son schema-less, lo que facilita la adaptación a cambios en el esquema de datos [48]. Ejemplos: MongoDB, CouchDB, RavenDB [42, 43].
+                <ul>
+                    <li>**MongoDB**: Es una base de datos no relacional de código abierto, orientada a la creación de wikis, blogs y sistemas de gestión documental. Utiliza el formato JSON para su almacenamiento y ofrece drivers nativos para diversos lenguajes de programación. Una colección en MongoDB es similar a una tabla relacional, un documento a una fila y un campo a una columna [49-51].</li>
+                </ul>
+            </li>
+            <li>**Orientadas a Grafos**: Almacenan la información en forma de grafo, dando importancia no solo a los datos sino también a las relaciones entre ellos. Son eficientes para navegar relaciones complejas, ideales para redes sociales o sistemas de recomendación [52]. Ejemplos: Neo4J, FlockDB, HyperGraphDB, InfoGrid [42, 43, 53].</li>
+            <li>**Bases de datos multivalor**: Permiten trabajar con pares clave/valor, pero admiten almacenar múltiples valores asociados a una clave, siendo útiles para gestionar datos complejos y variables [41, 54].</li>
+            <li>**Bases de datos de memoria (In-Memory)**: Almacenan datos en la memoria RAM del ordenador en lugar de en discos, lo que proporciona una altísima velocidad, aunque con mayor volatilidad de la información [55].</li>
+            <li>**Bases de datos distribuidas**: Los datos pueden almacenarse en distintos sistemas alejados (nodos), incluso en distintas redes, lo que aporta mayor disponibilidad o replicabilidad. Son adecuadas para una escalabilidad horizontal y la distribución geográfica de los datos [55].</li>
+        </ul>
+
+        <h3>3.4. Ventajas de las Bases de Datos No Relacionales</h3>
+        <ul>
+            <li>**Escalabilidad Horizontal**: Su diseño está optimizado para escalar fácilmente, ejecutándose en clusters de máquinas económicas. Permiten añadir nuevas máquinas en caliente sin necesidad de reiniciar el sistema [35, 56, 57].</li>
+            <li>**Flexibilidad en el esquema de datos**: Permiten cambiar el esquema de datos de manera ágil, e incluso trabajar con elementos con distintos esquemas en la misma estructura (schema-less) [58-60].</li>
+            <li>**Alto rendimiento**: Están optimizadas para trabajar con grandes volúmenes de datos de manera eficiente y rápida, especialmente en lecturas y escrituras intensivas [35, 60-62].</li>
+            <li>**Evitan cuellos de botella**: Al acceder directamente a la memoria, evitan los múltiples pasos de procesamiento que pueden generar cuellos de botella en las bases de datos relacionales [29, 57, 61].</li>
+            <li>**Diversidad de soluciones**: Ofrecen diferentes tipos de bases de datos para adaptarse a las necesidades específicas de cada proyecto [57, 59].</li>
+            <li>**Costos reducidos**: Al ser muchos productos de código abierto, disminuyen los costos de licencias y no requieren de servidores con grandes recursos [59].</li>
+        </ul>
+
+        <h3>3.5. Desventajas de las Bases de Datos No Relacionales</h3>
+        <ul>
+            <li>**Soporte limitado**: Al ser bases de datos de código abierto, el soporte es diferente al que ofrecen las compañías comerciales y puede no ser adecuado en caso de fallos [57, 63].</li>
+            <li>**Madurez y credibilidad**: Algunos productos pueden no estar lo suficientemente maduros y enfrentan problemas de credibilidad o inestabilidad en comparación con los SGBD tradicionales [29, 57].</li>
+            <li>**Limitaciones de Inteligencia de Negocios**: No proporcionan la misma clase de minería de datos rigurosa que las SGBDR. El análisis ad hoc a menudo implica conocimientos de programación considerables [57].</li>
+            <li>**Falta de experiencia**: La novedad de la tecnología implica una escasez de desarrolladores y administradores con los conocimientos técnicos apropiados, dificultando a las empresas encontrar personal cualificado [29, 57].</li>
+            <li>**Problemas de compatibilidad**: Tienen pocas normas en común; cada base de datos NoSQL tiene su propia API y interfaces de consulta únicas, lo que dificulta cambiar de proveedor [57, 64].</li>
+        </ul>
+    </section>
+
+    <section id="bases-distribuidas">
+        <h2>4. Bases de Datos Distribuidas</h2>
+        <h3>4.1. Definición</h3>
+        <p>Una **Base de Datos Distribuida (BDD)** es una colección de múltiples bases de datos interrelacionadas lógicamente y distribuidas por una red de computadores [65]. Los sistemas de bases de datos distribuidas buscan el manejo eficiente e integrado de la información generada en cualquier entorno productivo [66]. Permiten a los usuarios obtener una visión generalizada de la información disponible, accediendo a datos que se encuentran en más de una sede sin que el usuario sepa la distribución de los mismos [66, 67].</p>
+        <p>Un **Sistema de Gestión de Bases de Datos Distribuidas (SGBDD)** es aquel que se encarga del manejo de la BDD y proporciona un mecanismo de acceso que hace que la distribución sea transparente a los usuarios, es decir, la aplicación trabajaría como si una sola máquina administrara los datos [68, 69].</p>
+
+        <h3>4.2. Ventajas de las Bases de Datos Distribuidas</h3>
+        <p>Las bases de datos distribuidas ofrecen varias ventajas clave [70-73]:</p>
+        <ul>
+            <li>**Fiabilidad y disponibilidad**: La probabilidad de que un solo nodo afecte al sistema es baja. Existe autonomía e independencia entre los nodos, y la replicación de información ofrece tolerancia a fallos [72, 73].</li>
+            <li>**Acceso local**: Los datos pueden colocarse físicamente en el lugar donde se accedan más frecuentemente, permitiendo a los usuarios tener control local de los datos con los que interactúan [72].</li>
+            <li>**Mejor rendimiento**: Al distribuir una base de datos grande en múltiples sitios, las bases de datos en cada uno son más pequeñas, lo que mejora el rendimiento de las consultas locales y transacciones [73, 74].</li>
+            <li>**Escalabilidad**: Un sistema distribuido puede acoplar recursos adicionales para el aumento en su rendimiento [75].</li>
+            <li>**Autonomía local**: Promueve la evolución de los sistemas y los cambios en los requerimientos del usuario [71].</li>
+            <li>**Arquitectura flexible y tolerante a fallas**: Ofrece una arquitectura de sistemas simple, flexible y tolerante a fallas [71].</li>
+        </ul>
+
+        <h3>4.3. Desventajas de las Bases de Datos Distribuidas</h3>
+        <p>A pesar de sus ventajas, las bases de datos distribuidas presentan desafíos [76-78]:</p>
+        <ul>
+            <li>**Control y manejo de datos complejo**: Dado que los datos residen en muchos nodos diferentes y se pueden consultar por diversos nodos de la red, la probabilidad de violaciones de seguridad es creciente si no se toman las precauciones debidas [76].</li>
+            <li>**Complejidad en la integridad y recuperación**: Asegurar la integridad de la información en presencia de fallas no predecibles es complejo. El control de concurrencia y los mecanismos de recuperación son mucho más complejos que en un sistema centralizado [76, 77].</li>
+            <li>**Aumento de la complejidad de diseño e implementación**: La distribución produce un aumento en la complejidad del diseño y en la implementación del sistema [77].</li>
+            <li>**Problemas de integración**: Pueden surgir problemas de integración relacionados con la heterogeneidad de los grupos de trabajo y la disciplina [78].</li>
+            <li>**Riesgo de decisiones inconsistentes**: Ningún sitio puede observar el estado global de todo el sistema, lo cual puede llevar a decisiones inconsistentes en el procesamiento [78].</li>
+        </ul>
+    </section>
+
+    <section id="comparacion-resultados">
+        <h2>5. Comparación y Resultados (en aplicaciones web no transaccionales)</h2>
+        <p>Un análisis comparativo entre **MongoDB** (base de datos NoSQL orientada a documentos) y **MySQL** (base de datos relacional) para una aplicación web de blogs no transaccional reveló diferencias significativas en el rendimiento [79, 80]. Las pruebas se realizaron con diferentes volúmenes de registros [81, 82].</p>
+        <ul>
+            <li>**Tiempo de Respuesta**:
+                <ul>
+                    <li>Con **49.545 registros**: MongoDB tuvo tiempos de respuesta de aproximadamente **0.2 milisegundos** en el servidor y en los clientes. MySQL, por otro lado, mostró tiempos entre **1.07 y 1.62 milisegundos** [81].</li>
+                    <li>Con **125.264 registros**: MongoDB mantuvo tiempos de respuesta similares (alrededor de **0.2 milisegundos**), mientras que MySQL incrementó drásticamente a aproximadamente **146 milisegundos** [82].</li>
+                </ul>
+                Esto demuestra que **MongoDB tiene un mejor rendimiento en el tiempo de respuesta y visualización de datos en aplicaciones web no transaccionales**, especialmente a medida que aumenta el volumen de datos [80, 83].</li>
+            <li>**Flexibilidad del Esquema**: Al usar una base de datos no relacional, como MongoDB, al momento de añadir un campo extra **no es necesario cambiar la estructura de la base de datos** como ocurriría en una relacional [83].</li>
+            <li>**Tamaño y Tolerancia a Fallos**: Se comprobó que el tamaño de las bases de datos no relacionales puede ser más grande que una base de datos relacional y, aun así, sus tiempos de ejecución son más eficientes. Además, ofrecen un margen de tolerancia a fallos, como la redundancia de datos [84].</li>
+        </ul>
+    </section>
+
+    <section id="conclusiones">
+        <h2>6. Conclusiones</h2>
+        <p>La elección entre bases de datos relacionales y NoSQL debe basarse en un análisis minucioso de las **necesidades y requisitos específicos del proyecto**, ya que ninguna es intrínsecamente "mejor" que la otra; su uso dependerá del escenario [75, 85, 86].</p>
+        <ul>
+            <li>Las **bases de datos relacionales** son idóneas para sistemas que requieren **alta integridad de datos y esquemas bien definidos**, como aplicaciones financieras o de comercio electrónico [26].</li>
+            <li>Las **bases de datos NoSQL** son más adecuadas para escenarios donde la **velocidad y la escalabilidad horizontal son prioritarias**, especialmente en el manejo de **grandes volúmenes de datos no transaccionales**, como redes sociales, blogs o sistemas de recomendación [26].</li>
+            <li>En aplicaciones web no transaccionales con gran cantidad de información, el uso de bases de datos no relacionales, como **MongoDB, demostró una considerable reducción en el tiempo de respuesta** para la visualización de resultados [83]. Su flexibilidad de esquema y eficiencia en entornos escalables las convierten en una alternativa poderosa para el manejo de Big Data y el crecimiento de la web en tiempo real [35, 58, 87].</li>
+            <li>Las **bases de datos distribuidas**, ya sean relacionales o NoSQL, permiten **dividir las cargas de trabajo** y las consultas para una mayor velocidad, incrementando el rendimiento y la disponibilidad del sistema [70, 74].</li>
+        </ul>
+    </section>
+
+    <section id="recomendaciones">
+        <h2>7. Recomendaciones</h2>
+        <p>Para el desarrollo de proyectos con bases de datos, se recomienda tener en cuenta los siguientes aspectos [88, 89]:</p>
+        <ul>
+            <li>Realizar un **análisis minucioso y detallado** de los requerimientos y características del proyecto es vital. Esto asegura que se cubran las necesidades requeridas, evitando gastos innecesarios y permitiendo seleccionar la tecnología más adecuada [88].</li>
+            <li>Desarrollar un **buen diseño de la base de datos** es crucial para que la información no contenga datos redundantes, especialmente en el caso de una base de datos relacional [88].</li>
+            <li>Al optar por software libre para reducir costos y mantener un buen rendimiento, se debe considerar la **capacidad y madurez de estos programas** para el manejo eficiente de la información [89, 90].</li>
+            <li>Para aplicaciones que requieran manejar **grandes volúmenes de datos (BIG DATA)**, alto porcentaje de procesamiento (rendimiento) y la inclusión de diferentes formatos de datos (no homogéneos), una base de datos no relacional es una alternativa eficaz y escalable [87].</li>
+            <li>Considerar el **teorema de CAP** (Consistencia, Disponibilidad y Tolerancia a Fallos) como guía para elegir la base de datos adecuada, dependiendo de los requerimientos específicos de la aplicación en cuanto a estas tres propiedades [91, 92].</li>
+            <li>Es importante contar con **personal altamente calificado** que tenga conocimientos sólidos en las tecnologías de bases de datos elegidas [90].</li>
+        </ul>
+    </section>
+
+    <section id="bibliografia">
+        <h2>8. Bibliografía</h2>
+        <ul>
+            <li>[93-118] Córdova Espinoza, R. F., & Cuzco Sarango, B. E. (2013). Análisis comparativo entre bases de datos relacionales con bases de datos no relacionales. Universidad Politécnica Salesiana.</li>
+            <li>[1, 119-125] Frogames Formación. (2024). Base de datos: Cómo gestionarlas por los expertos.</li>
+            <li>[41, 48, 55, 60, 86, 126-136] Arsys Blog. (s.f.). Bases de datos NoSQL: qué son, tipos y ventajas.</li>
+            <li>[137-173] Reddit. (s.f.). Casos de uso de bases de datos NoSQL: r/dataengineering.</li>
+            <li>[65-74, 76-78, 174-290] Campo Romero, J. D., & Cruz Camelo, J. A. (2019). Diseño e Implementación de una Base de Datos Distribuida Homogénea en el Prototipo de un Sistema de Control de Acceso. Universidad Distrital Francisco José de Caldas.</li>
+            <li>[33, 36, 38, 43, 54, 57, 62, 291-296] Wikipedia. (s.f.). NoSQL.</li>
+            <li>[297-326] Apiumhub. (2021). Los principales expertos en Ciencia de Datos que debes conocer.</li>
+            <li>[5-14, 327-360] Wikipedia. (s.f.). SQL.</li>
+            <li>[361-371] Rootstack. (s.f.). Tendencias emergentes en la gestión de bases de datos.</li>
+            <li>[26, 85, 372-375] EDteam. (s.f.). ¿Cuándo usar SQL y cuándo NoSQL?.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Monografía generada con información de los documentos proporcionados.</p>
+    </footer>
+</body>
+</html>
